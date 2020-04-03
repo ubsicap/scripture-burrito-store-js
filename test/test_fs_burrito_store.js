@@ -572,24 +572,29 @@ describe("FS Burrito Class", function() {
     });
 
 
-    /*
-      it("Persistant metadata storage", function() {
-	const b = new FSBurritoStore(
-	    {
-		"storeClass": "FSBurritoStore",
-		"validation": "burrito"
-	    },
-	    this.storagePath
-	);
-      b.importFromObject(this.metadata["validTextTranslation"]);
-      const b2 = new FSBurritoStore(
-	{
-	  "storeClass": "FSBurritoStore",
-	  "validation": "burrito"
-	},
-	this.storagePath
-      );
-      assert.equal(b2.entryRevisionVariants("https://thedigitalbiblelibrary.org", "2880c78491b2f8ce", "91").length, 1);
+    it("Persistant metadata storage", function () {
+        const b = new FSBurritoStore(
+            {
+                storeClass: "FSBurritoStore",
+                validation: "burrito",
+            },
+            this.storagePath
+        );
+        b.importFromObject(this.metadata["validTextTranslation"]);
+        const b2 = new FSBurritoStore(
+            {
+                storeClass: "FSBurritoStore",
+                validation: "burrito",
+            },
+            this.storagePath
+        );
+        assert.equal(
+            b2.entryRevisionVariants(
+                "https://thedigitalbiblelibrary.org",
+                "2880c78491b2f8ce",
+                "91"
+            ).length,
+            1
+        );
     });
-    */
 });
